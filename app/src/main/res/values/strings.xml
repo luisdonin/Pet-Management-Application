@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pets</string>
+    <string name="pet_management">Pet Management</string>
+    <string name="manage_types">Manage Types</string>
+    <string name="manage_breeds">Manage Breeds</string>
+    <string name="manage_cities">Manage Cities</string>
+    <string name="manage_animals">Manage Animals</string>
+    <string name="search_animals">Search Animals</string>
+    <string name="pet_photo">pet_photo</string>
+    <string name="pet_name">dog</string>
+</resources>
