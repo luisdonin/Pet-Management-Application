@@ -8,4 +8,13 @@
     <string name="search_animals">Search Animals</string>
     <string name="pet_photo">pet_photo</string>
     <string name="pet_name">dog</string>
+    <string name="age">Age</string>
+    <string name="owner_s_name">Owner\'s Name</string>
+    <string name="owner_s_address">Owner\'s Address</string>
+    <string name="create">Create</string>
+    <string name="read">Read</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="edit">edit</string>
+    <string name="pet_breed">Pet Breed</string>
 </resources>
