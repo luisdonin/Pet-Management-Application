@@ -1,4 +1,4 @@
-package com.example.pets;
+package com.example.pets.model;
 
 import java.io.Serializable;
 /*
@@ -9,10 +9,10 @@ import java.io.Serializable;
 *  Because I get my false data from real people, not AI
 *
 * */
-public class PetSpecies implements Serializable {
+public class Species implements Serializable {
     String BinomialNomenclature;
 
-    public PetSpecies(String binomialNomenclature) {
+    public Species(String binomialNomenclature) {
         this.BinomialNomenclature = binomialNomenclature;
     }
 

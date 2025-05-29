@@ -17,4 +17,5 @@
     <string name="delete">Delete</string>
     <string name="edit">edit</string>
     <string name="pet_breed">Pet Breed</string>
+    <string name="owner_name">Pete</string>
 </resources>

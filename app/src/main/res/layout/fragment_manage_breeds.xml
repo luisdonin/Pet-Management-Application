@@ -13,7 +13,7 @@
         android:prompt="@string/select_species" />
 
     <EditText
-        android:id="@+id/et_breed_name"
+        android:id="@+id/pet_breed_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/breed_name"

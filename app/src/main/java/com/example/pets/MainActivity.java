@@ -10,6 +10,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.pets.controller.AnimalController;
+import com.example.pets.controller.HumanController;
+import com.example.pets.model.Animal;
+
 import java.util.ArrayList;
 
 
@@ -35,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     ArrayList<Animal> animals = new ArrayList<>();
-    RegAnimal registerAnimalFragment = new RegAnimal();
+    AnimalController registerAnimalFragment = new AnimalController();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,28 +51,24 @@ public class MainActivity extends AppCompatActivity {
         Button btnManageAnimal = findViewById(R.id.btn_manage_animal);
         Button btnSearch = findViewById(R.id.btn_search);
 
-        btnManageBreed.setOnClickListener(new View.OnClickListener() {
-                                              @Override
-                                              public void onClick(View v) {
-                                                setContentView(R.layout.activity_manage_breeds);
-                                              }
-                                          });
-        btnManageAnimal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragment_container, new RegAnimal())
-                        .commit();
-            }
-        });
+        btnManageBreed.setOnClickListener(v -> {
+            //setContentView(R.layout.activity_manage_breeds);
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, new com.example.pets.controller.BreedController())
+                    .commit();
+            });
 
-        btnManageOwner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setContentView(R.layout.activity_manage_owner);
-            }
-        });
+
+        btnManageAnimal.setOnClickListener(v -> getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new AnimalController())
+                .commit());
+
+        btnManageOwner.setOnClickListener(v -> getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new HumanController())
+                .commit());
 
                 ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
                     Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void confirmar(View v) {
+   public void confirmar(View v) {
         if ( registerAnimalFragment != null) {
             Animal c = registerAnimalFragment.data();
             registerAnimalFragment.adicionar(c);

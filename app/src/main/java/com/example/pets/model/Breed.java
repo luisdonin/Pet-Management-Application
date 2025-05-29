@@ -1,9 +1,9 @@
-package com.example.pets;
+package com.example.pets.model;
 
-public class PetBreed implements java.io.Serializable {
+public class Breed implements java.io.Serializable {
     private String breedName;
 
-    public PetBreed(String breedName) {
+    public Breed(String breedName) {
         this.breedName = breedName;
     }
 

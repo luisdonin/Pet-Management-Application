@@ -1,4 +1,4 @@
-package com.example.pets;
+package com.example.pets.model;
 
 import java.io.Serializable;
 /*
@@ -9,13 +9,13 @@ import java.io.Serializable;
 * */
 public class Animal implements Serializable {
 
-    public String name;
+    private String name;
 
 
 
-    Human owner;
-    PetSpecies species;
-    PetBreed breed;
+    private Human owner;
+    private Species species;
+    private Breed breed;
     public String city;
 
 
@@ -23,7 +23,7 @@ public class Animal implements Serializable {
 
     public String age;
 
-    public Animal(String name, PetSpecies species, PetBreed breed, String city, String age) {
+    public Animal(String name, Species species, Breed breed, String city, String age) {
         this.name = name;
         this.species = species;
         this.breed = breed;
@@ -39,19 +39,19 @@ public class Animal implements Serializable {
         this.name = name;
     }
 
-    public PetSpecies getSpecies() {
+    public Species getSpecies() {
         return species;
     }
 
-    public void setSpecies(PetSpecies species) {
+    public void setSpecies(Species species) {
         this.species = species;
     }
 
-    public PetBreed getBreed() {
+    public Breed getBreed() {
         return breed;
     }
 
-    public void setBreed(PetBreed breed) {
+    public void setBreed(Breed breed) {
         this.breed = breed;
     }
 

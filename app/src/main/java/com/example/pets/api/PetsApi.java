@@ -1,4 +1,6 @@
-package com.example.pets;
+package com.example.pets.api;
+
+import com.example.pets.model.Animal;
 
 import java.util.List;
 import retrofit2.Call;

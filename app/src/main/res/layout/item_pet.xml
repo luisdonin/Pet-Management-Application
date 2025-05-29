@@ -8,29 +8,30 @@
     android:layout_marginBottom="8dp">
 
     <TextView
-        android:id="@+id/tv_pet_name"
+        android:id="@+id/pet_animal_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pet Name"
+        android:text="@string/animal_name"
         android:textStyle="bold"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/tv_pet_age"
+        android:id="@+id/pet_animal_age"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Age: 2" />
+        android:text="@string/age"
+        />
 
     <TextView
-        android:id="@+id/tv_pet_breed"
+        android:id="@+id/pet_breed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Breed: Labrador" />
+        android:text="@string/pet_breed" />
 
     <TextView
-        android:id="@+id/tv_pet_species"
+        android:id="@+id/pet_species"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Species: Dog" />
+        android:text="@string/pet_species" />
 
 </LinearLayout>

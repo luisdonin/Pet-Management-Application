@@ -1,5 +1,6 @@
-package com.example.pets;
+package com.example.pets.controller;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +12,19 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pets.model.Species;
+import com.example.pets.model.Animal;
+import com.example.pets.adapter.AnimalAdapter;
+import com.example.pets.model.Breed;
+import com.example.pets.R;
+
 import java.util.ArrayList;
 
 /*
 * May 26th, 2025.
 * This is intended to be the registration screen for animals.
 * */
-public class RegAnimal extends Fragment {
+public class AnimalController extends Fragment {
     EditText petName, petAge, petOwnerName, petOwnerAdresss, petSpecies, petBreed;
     Button btnCreate, btnRead, btnEdit, btnDelete;
 
@@ -34,7 +41,7 @@ public class RegAnimal extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.activity_manage_animals, container, false);
+        View v = inflater.inflate(R.layout.fragment_manage_animals, container, false);
         petName = v.findViewById(R.id.pet_animal_name);
         petAge = v.findViewById(R.id.pet_animal_age);
         petOwnerName = v.findViewById(R.id.pet_owner_name);
@@ -48,13 +55,10 @@ public class RegAnimal extends Fragment {
         RecyclerView rv = v.findViewById(R.id.rv_animals);
         rv.setAdapter(adapter);
 
-        btnCreate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Animal c = data();
-                if (c != null) {
-                    adicionar(c);
-                }
+        btnCreate.setOnClickListener(view -> {
+            Animal c = data();
+            if (c != null) {
+                adicionar(c);
             }
         });
 
@@ -68,7 +72,7 @@ public class RegAnimal extends Fragment {
         String ownerName = petOwnerName.getText().toString().trim();
         String ownerAddress = petOwnerAdresss.getText().toString().trim();
         String speciesPet = petSpecies.getText().toString().trim();
-        if (namePet == null || namePet.isEmpty() || agePet == null || breedPet == null || breedPet.isEmpty() || agePet.isEmpty() || ownerName == null || ownerName.isEmpty() || ownerAddress == null || ownerAddress.isEmpty() || speciesPet == null || speciesPet.isEmpty()) {
+        if (namePet.isEmpty() || breedPet.isEmpty() || agePet.isEmpty() || ownerName.isEmpty() || ownerAddress.isEmpty() || speciesPet.isEmpty()) {
             Toast.makeText(getActivity(),"Preencher todos os campos!", Toast.LENGTH_SHORT).show();
             return null;
         }
@@ -80,17 +84,19 @@ public class RegAnimal extends Fragment {
         petBreed.setText("");
         return new Animal(
                 namePet,
-                new PetSpecies(speciesPet), // or PetSpecies.valueOf(speciesPet)
-                new PetBreed(breedPet),     // or PetBreed.valueOf(breedPet)
+                new Species(speciesPet),
+                new Breed(breedPet),
                 ownerAddress,
                 agePet
         );
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void adicionar(Animal c) {
         animalList.add(c);
         adapter.notifyDataSetChanged();
         Toast.makeText(getActivity(), "Animal saved!", Toast.LENGTH_SHORT).show();
     }
+
 
 }

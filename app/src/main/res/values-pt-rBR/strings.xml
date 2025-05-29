@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pets</string>
+    <string name="pet_management">Animal Dashboard</string>
+    <string name="manage_types">Tipo</string>
+    <string name="manage_breeds">Raça</string>
+    <string name="manage_cities">Endereço</string>
+    <string name="manage_animals">Animal</string>
+    <string name="search_animals">Busca</string>
+    <string name="pet_photo">Foto</string>
+    <string name="pet_name">Dog</string>
+    <string name="animal_name">Nome</string>
+    <string name="age">Idade</string>
+    <string name="owner_s_name">Dono</string>
+    <string name="owner_s_address">Endereço</string>
+    <string name="create">Cadastrar</string>
+    <string name="read">Listar</string>
+    <string name="update">Atualizar</string>
+    <string name="delete">Remover</string>
+    <string name="breed_name">Raça</string>
+    <string name="select_species">Espécie</string>
+    <string name="manage_owner">Dono</string>
+    <string name="pet_species">Espécie</string>
+    <string name="edit">Editar</string>
+    <string name="pet_breed">Raça</string>
+    <string name="owner_name">Pete</string>
+</resources>
