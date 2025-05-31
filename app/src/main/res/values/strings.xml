@@ -17,11 +17,23 @@
     <string name="update">Update</string>
     <string name="delete">Delete</string>
     <string name="breed_name">breed_name</string>
-    <string name="select_species">select_species\n</string>
+    <string name="select_species">select_species</string>
     <string name="manage_owner">manage Owner</string>
     <string name="pet_species">Pet Species</string>
     <string name="edit">edit</string>
     <string name="pet_breed">Pet Breed</string>
     <string name="owner_name">Pete</string>
     <string name="owner_photo">owner photo</string>
+    <string-array name="pet_age">
+        <item>0–1 year</item>
+        <item>1–3 years</item>
+        <item>3–5 years</item>
+        <item>5+ years</item>
+    </string-array>
+    <string-array name="pet_species">
+        <item>Labradoodle</item>
+        <item>Canturner</item>
+        <item>Digger</item>
+        <item>Snowjons</item>
+    </string-array>
 </resources>

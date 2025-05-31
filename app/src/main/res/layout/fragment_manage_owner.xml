@@ -1,49 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp">
 
+<TextView
+    android:id="@+id/owner_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Owner Name"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:paddingBottom="8dp"
+    tools:ignore="HardcodedText" />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="24dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
+    <EditText
+    android:id="@+id/owner_name_input"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter Owner Name"
+    android:inputType="textPersonName"
+    android:padding="8dp"
+    android:background="@android:drawable/edit_text"
+    tools:ignore="HardcodedText" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:padding="16dp">
-
-            <ImageView
-                android:id="@+id/img_pet_photo"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:src="@drawable/ic_owner_placeholder"
-                android:contentDescription="@string/owner_photo"
-                android:scaleType="centerCrop"
-
-                android:layout_marginBottom="8dp"/>
-
-            <TextView
-                android:id="@+id/owner_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/owner_name"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="8dp"/>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-
+<TextView
+    android:id="@+id/owner_address"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Owner Address"
+    android:textSize="16sp"
+    tools:ignore="HardcodedText" />
+    <EditText
+    android:id="@+id/owner_address_input"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter Owner Address"
+    android:inputType="textPostalAddress"
+    android:padding="8dp"
+    android:background="@android:drawable/edit_text"
+    tools:ignore="HardcodedText" />
+<Button
+    android:id="@+id/save_owner_button"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Save Owner"
+    android:layout_gravity="center"
+    android:padding="12dp"
+    android:backgroundTint="@color/colorPrimary"
+    android:textColor="@android:color/white"
+    tools:ignore="HardcodedText" />
 </LinearLayout>
+
+<!-- May 30th, 2025 -->
+
+<!--
+
+    After realizing my mistake,
+    I contemplated ~What makes a human?~
+
+
+    A human has a name,
+    A human has an address.
+
+-->

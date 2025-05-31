@@ -62,3 +62,20 @@
         android:layout_weight="1"
         android:layout_marginTop="16dp"/>
 </LinearLayout>
+
+<!--
+ May 30th, 2025.
+ You can't build a pyramid without a base.
+ Atoms are formed by neutrons, protons, and electrons.
+ A Pet Information System is built on:
+
+         / | \
+        /  |  \
+       /   |   \
+          Pet   \
+     /     |     \
+    /      |      \
+  Owner  Species Breed
+  /        |        \
+ ___________\________
+ -->

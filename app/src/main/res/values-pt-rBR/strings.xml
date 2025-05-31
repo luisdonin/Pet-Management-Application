@@ -24,4 +24,5 @@
     <string name="edit">Editar</string>
     <string name="pet_breed">Raça</string>
     <string name="owner_name">Pete</string>
+    <string name="owner_photo">Foto do dono</string>
 </resources>

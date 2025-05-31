@@ -7,15 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.pets.model.Species;
 import com.example.pets.model.Animal;
 import com.example.pets.adapter.AnimalAdapter;
-import com.example.pets.model.Breed;
 import com.example.pets.R;
 
 import java.util.ArrayList;
@@ -23,14 +22,18 @@ import java.util.ArrayList;
 /*
 * May 26th, 2025.
 * This is intended to be the registration screen for animals.
+*  May 30th, 2025.
+*  So, I remodeled the animal class
+*  now I have to rebuild the controller
 * */
 public class AnimalController extends Fragment {
-    EditText petName, petAge, petOwnerName, petOwnerAdresss, petSpecies, petBreed;
+    EditText ownerName, ownerAddr, petName, breed;
+    Spinner species, age;
     Button btnCreate, btnRead, btnEdit, btnDelete;
 
     AnimalAdapter adapter;
 
-    private ArrayList<Animal> animalList = new ArrayList<>();
+    private final ArrayList<Animal> animalList = new ArrayList<>();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -42,12 +45,11 @@ public class AnimalController extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_manage_animals, container, false);
-        petName = v.findViewById(R.id.pet_animal_name);
-        petAge = v.findViewById(R.id.pet_animal_age);
-        petOwnerName = v.findViewById(R.id.pet_owner_name);
-        petOwnerAdresss = v.findViewById(R.id.pet_owner_address);
-        petSpecies = v.findViewById(R.id.pet_species);
-        petBreed = v.findViewById(R.id.pet_breed);
+        ownerName = v.findViewById(R.id.pet_owner_name);
+        ownerAddr = v.findViewById(R.id.pet_owner_address);
+        species = v.findViewById(R.id.pet_species);
+        breed = v.findViewById(R.id.pet_breed);
+        age = v.findViewById(R.id.pet_animal_age);
         btnCreate = v.findViewById(R.id.btn_create);
 
 
@@ -66,29 +68,26 @@ public class AnimalController extends Fragment {
     }
 
     public Animal data( ) {
-        String namePet = petName.getText().toString().trim();
-        String agePet = petAge.getText().toString().trim();
-        String breedPet = petBreed.getText().toString().trim();
-        String ownerName = petOwnerName.getText().toString().trim();
-        String ownerAddress = petOwnerAdresss.getText().toString().trim();
-        String speciesPet = petSpecies.getText().toString().trim();
-        if (namePet.isEmpty() || breedPet.isEmpty() || agePet.isEmpty() || ownerName.isEmpty() || ownerAddress.isEmpty() || speciesPet.isEmpty()) {
+
+        String nameOwner = ownerName.getText().toString().trim();
+        String ownerAddress = ownerAddr.getText().toString().trim();
+        String namePet = petName.getText().toString().trim(); // I did this because then I wouldn't have to write getText().toString().trim() all the time.
+        String petSpecies = String.valueOf(species);
+        String petBreed = breed.getText().toString().trim();
+        int agePet = Integer.parseInt(String.valueOf(age));
+
+        if (nameOwner.isEmpty() || ownerAddress.isEmpty() || namePet.isEmpty() || petSpecies.isEmpty() || petBreed.isEmpty()) {
             Toast.makeText(getActivity(),"Preencher todos os campos!", Toast.LENGTH_SHORT).show();
             return null;
         }
+        ownerName.setText("");
+        ownerAddr.setText("");
         petName.setText("");
-        petAge.setText("");
-        petOwnerName.setText("");
-        petOwnerAdresss.setText("");
-        petSpecies.setText("");
-        petBreed.setText("");
-        return new Animal(
-                namePet,
-                new Species(speciesPet),
-                new Breed(breedPet),
-                ownerAddress,
-                agePet
-        );
+      //petOwnerAdresss.setText("");
+     //petSpecies.setText("");
+        breed.setText("");
+        return new Animal(nameOwner, ownerAddress, namePet, petSpecies, petBreed, agePet);
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -100,3 +99,8 @@ public class AnimalController extends Fragment {
 
 
 }
+/*
+* May 30th, 2025.
+* I decided that I don't really need three classe to represent the animal
+* So I axed the Species and Breed classes. AI tried to auto complete my comment but I denied it the pleasure.
+* */

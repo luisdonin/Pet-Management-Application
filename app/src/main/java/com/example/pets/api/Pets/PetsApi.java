@@ -1,4 +1,4 @@
-package com.example.pets.api;
+package com.example.pets.api.Pets;
 
 import com.example.pets.model.Animal;
 

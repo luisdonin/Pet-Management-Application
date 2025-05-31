@@ -5,30 +5,43 @@ import java.io.Serializable;
 * May 26th, 2025.
 * This class represents an Animal with properties such as name, species, breed, city, and value.
 * Now I'm going to create the Animal list on MainActivity.java
-*
+*  May 30th, 2025.
+* Here I am again, remodelling again
+* But it'll work this time
+* Because now I know what I'm doing
+* Yes, my model will mirror my frontend because it's easier to work with images
 * */
 public class Animal implements Serializable {
-
+    private String owner;
+    private String ownerAddress;
     private String name;
+    private String species;
+    private String breed;
+    private int age;
 
-
-
-    private Human owner;
-    private Species species;
-    private Breed breed;
-    public String city;
-
-
-
-
-    public String age;
-
-    public Animal(String name, Species species, Breed breed, String city, String age) {
+    public Animal(String owner, String ownerAddress, String name, String species, String breed, int age) {
+        this.owner = owner;
+        this.ownerAddress = ownerAddress;
         this.name = name;
         this.species = species;
         this.breed = breed;
-        this.city = city;
         this.age = age;
+    }
+
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
+    public String getOwnerAddress() {
+        return ownerAddress;
+    }
+
+    public void setOwnerAddress(String ownerAddress) {
+        this.ownerAddress = ownerAddress;
     }
 
     public String getName() {
@@ -39,51 +52,27 @@ public class Animal implements Serializable {
         this.name = name;
     }
 
-    public Species getSpecies() {
+    public String getSpecies() {
         return species;
     }
 
-    public void setSpecies(Species species) {
+    public void setSpecies(String species) {
         this.species = species;
     }
 
-    public Breed getBreed() {
-        return breed;
-    }
-
-    public void setBreed(Breed breed) {
-        this.breed = breed;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
-        this.value = value;
-    }
-
-    public String value;
-    public String getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(String age) {
+    public void setAge(int age) {
         this.age = age;
     }
-    public Human getOwner() {
-        return owner;
+
+    public String getBreed() {
+        return breed;
     }
 
-    public void setOwner(Human owner) {
-        this.owner = owner;
+    public void setBreed(String breed) {
+        this.breed = breed;
     }
 }

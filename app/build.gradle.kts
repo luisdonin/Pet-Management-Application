@@ -42,4 +42,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    /* May 30th, 2025.
+       I already added retrofit's dependencies so no worries here homie
+    */
 }

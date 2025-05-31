@@ -6,51 +6,51 @@
     android:padding="16dp">
 
     <EditText
-        android:layout_marginTop="10dp"
-        android:id="@+id/pet_animal_name"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/animal_name"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="8dp"/>
-
-    <EditText
-        android:id="@+id/pet_animal_age"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/age"
-        android:inputType="number"
-        android:layout_marginBottom="8dp"/>
-
-    <EditText
         android:id="@+id/pet_owner_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:hint="@string/owner_s_name"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="8dp"/>
-    <EditText
-        android:id="@+id/pet_breed"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/pet_breed"
-        android:inputType="textPersonName"
-        android:layout_marginBottom="8dp"/>
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/pet_owner_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="@string/owner_s_address"
-        android:inputType="textPostalAddress"
-        android:layout_marginBottom="16dp"/>
+        android:inputType="textPostalAddress" />
+
     <EditText
+        android:id="@+id/pet_animal_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/animal_name"
+        android:inputType="textPersonName" />
+
+    <Spinner
         android:id="@+id/pet_species"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/pet_species"
-        android:inputType="textPostalAddress"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginBottom="16dp"
+        android:inputType="textPostalAddress" />
+
+    <EditText
+        android:id="@+id/pet_breed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:hint="@string/pet_breed"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/pet_animal_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -91,6 +91,6 @@
         android:id="@+id/rv_animals"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="16dp"
+        android:layout_weight="1" />
 </LinearLayout>
