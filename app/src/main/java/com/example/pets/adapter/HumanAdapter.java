@@ -7,33 +7,44 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class HumanAdapter extends RecycleView.Adapter<HumanAdapter.HumanViewHolder> {
-    // Define your adapter's data source and other necessary methods here
+    
 
-    // Example ViewHolder class
+    
     public static class HumanViewHolder extends RecyclerView.ViewHolder {
-        // Define views for the ViewHolder
+        
 
         public HumanViewHolder(@NonNull View itemView) {
             super(itemView);
             // Initialize views
+
         }
     }
 
     @NonNull
     @Override
     public HumanViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // Inflate your layout and create a new ViewHolder instance
-        return null; // Replace with actual implementation
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(android.R.layout.simple_list_item_1, parent, false);
+        return new HumanViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull HumanViewHolder holder, int position) {
-        // Bind data to the ViewHolder
+        Human human = animalList.get(position);
+        holder.textView.setText(human.getName());
     }
 
     @Override
     public int getItemCount() {
-        return 0; // Replace with actual size of your data source
+        return humanList.size();
+    }
+
+    public static class HumanViewHolder extends RecyclerView.ViewHolder {
+        TextView textView;
+        public HumanViewHolder(@NonNull View itemView) {
+            super(itemView);
+            textView = itemView.findViewById(android.R.id.text1);
+        }
     }
 
 }
